@@ -1,0 +1,21 @@
+{{ define "schema" }}
+<script type="application/ld+json">{{ dict "@context" "https://schema.org" "@type" "Article" "headline" .Title "description" .Description "datePublished" (.Date.Format "2006-01-02") "publisher" (dict "@type" "Organization" "name" site.Title) "about" (dict "@type" "Organization" "name" .Params.entidade) | jsonify | safeJS }}</script>
+{{ end }}
+{{ define "main" }}
+<article class="concurso">
+<h1>{{ .Title }}</h1>
+<p>{{ partial "estado.html" . }}</p>
+<dl>
+<dt>Entidade</dt><dd>{{ .Params.entidade }}</dd>
+<dt>Sector</dt><dd>{{ range .GetTerms "sectores" }}<a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a> {{ end }}</dd>
+<dt>N.º do concurso</dt><dd>{{ .Params.numero }}</dd>
+<dt>Prazo de entrega</dt><dd>{{ with .Params.prazo_texto }}{{ . }}{{ else }}a confirmar{{ end }}</dd>
+{{ with .Params.valor }}<dt>Valor</dt><dd>{{ . }}</dd>{{ end }}
+<dt>Quem pode concorrer</dt><dd>{{ .Params.quem_pode }}</dd>
+<dt>Fonte oficial</dt><dd><a href="{{ .Params.link_oficial }}" rel="noopener nofollow">{{ .Params.link_rotulo | default "Anúncio oficial" }}</a></dd>
+<dt>Data de recolha</dt><dd>{{ with .Params.recolha }}{{ (time .).Format "02/01/2006" }}{{ end }}</dd>
+</dl>
+{{ .Content }}
+<p class="nota">Resumo por palavras nossas. Leia o anúncio completo antes de concorrer.</p>
+</article>
+{{ end }}

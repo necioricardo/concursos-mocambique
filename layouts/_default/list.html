@@ -1,0 +1,4 @@
+{{ define "main" }}
+<h1>{{ .Title }}</h1>
+<ul class="lista">{{ range .Pages.ByParam "prazo" }}{{ partial "item.html" . }}{{ end }}</ul>
+{{ end }}

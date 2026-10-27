@@ -1,0 +1,11 @@
+*{box-sizing:border-box}body{margin:0 auto;max-width:42rem;padding:0 1rem;font:17px/1.55 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:#1b1b1b;background:#fff}
+header{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:.5rem;padding:.8rem 0;border-bottom:1px solid #ddd}
+.logo{font-weight:700;color:#0a5c36;text-decoration:none}nav a{margin-left:.8rem;color:#333}
+a{color:#0a5c36}h1{font-size:1.45rem;line-height:1.25}h2{font-size:1.15rem;margin-top:1.8rem}
+.aviso{font-size:.85rem;background:#fff7e0;border-left:4px solid #e0a800;padding:.5rem .7rem}
+.lista{list-style:none;padding:0}.lista li{padding:.6rem 0;border-bottom:1px solid #eee}.lista small{display:block;color:#555}
+dl{display:grid;grid-template-columns:1fr;gap:.1rem}dt{font-weight:600;margin-top:.6rem}dd{margin:0}
+.estado{font-size:.8rem;padding:.1rem .5rem;border-radius:1rem;text-transform:uppercase}.aberto{background:#dff3e6;color:#0a5c36}.expirado{background:#eee;color:#666}
+.cta{margin:2rem 0;padding:1rem;background:#f2f8f4;border-radius:.6rem;text-align:center}
+.btn{display:inline-block;background:#25d366;color:#05301b;font-weight:700;padding:.7rem 1.1rem;border-radius:.5rem;text-decoration:none}
+.nota{font-size:.85rem;color:#555}footer{font-size:.85rem;color:#666;padding:1rem 0 2rem;border-top:1px solid #ddd}

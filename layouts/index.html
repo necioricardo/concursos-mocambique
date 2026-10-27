@@ -1,0 +1,11 @@
+{{ define "main" }}
+<h1>Concursos para PME em Moçambique</h1>
+<p>{{ site.Params.description }}</p>
+{{ $all := where site.RegularPages "Section" "concursos" }}
+{{ $abertos := where $all "Params.prazo" "ge" (now.Format "2006-01-02T15:04:05Z07:00") }}
+<h2>Prazos mais próximos</h2>
+<ul class="lista">{{ range first 10 ($abertos.ByParam "prazo") }}{{ partial "item.html" . }}{{ end }}</ul>
+<h2>Mais recentes</h2>
+<ul class="lista">{{ range first 10 ($all.ByParam "recolha").Reverse }}{{ partial "item.html" . }}{{ end }}</ul>
+<p><a href="/concursos/">Ver todos (arquivo)</a></p>
+{{ end }}

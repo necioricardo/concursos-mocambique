@@ -1,0 +1,3 @@
+{{- $estado := .Params.estado | default "aberto" -}}
+{{- with .Params.prazo -}}{{- if lt (time .) now -}}{{- $estado = "expirado" -}}{{- end -}}{{- end -}}
+<span class="estado {{ $estado }}">{{ $estado }}</span>

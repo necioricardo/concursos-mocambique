@@ -1,0 +1,2 @@
+<li><a href="{{ .RelPermalink }}">{{ .Title }}</a>
+<small>{{ .Params.entidade }} · prazo {{ with .Params.prazo }}{{ (time .).Format "02/01/2006" }}{{ end }} · {{ partial "estado.html" . }}</small></li>

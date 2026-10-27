@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+{{- $t := cond .IsHome site.Title (printf "%s | %s" .Title site.Title) }}
+<title>{{ $t }}</title>
+<meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ site.Params.description }}{{ end }}">
+<link rel="canonical" href="{{ .Permalink }}">
+<meta property="og:title" content="{{ $t }}">
+<meta property="og:description" content="{{ with .Description }}{{ . }}{{ else }}{{ site.Params.description }}{{ end }}">
+<meta property="og:url" content="{{ .Permalink }}">
+<meta property="og:type" content="website">
+{{ $css := resources.Get "style.css" | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $css.RelPermalink }}">
+{{ block "schema" . }}{{ end }}
+</head>
+<body>
+<header><a class="logo" href="/">Concursos Moçambique</a>
+<nav><a href="/sectores/">Sectores</a><a href="/como-usar/">Como usar</a><a href="/sobre/">Sobre</a></nav></header>
+<p class="aviso">Não somos a entidade contratante nem intermediários. Confirme sempre no anúncio original.</p>
+<main>{{ block "main" . }}{{ end }}</main>
+{{ partial "cta.html" . }}
+<footer><a href="/aviso-legal/">Aviso legal</a> · Sem cookies nem recolha de dados neste site.</footer>
+</body>
+</html>

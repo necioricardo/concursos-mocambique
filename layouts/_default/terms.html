@@ -1,0 +1,4 @@
+{{ define "main" }}
+<h1>Sectores</h1>
+<ul class="lista">{{ range .Data.Terms.Alphabetical }}<li><a href="{{ .Page.RelPermalink }}">{{ .Page.Title }}</a> <small>({{ .Count }})</small></li>{{ end }}</ul>
+{{ end }}

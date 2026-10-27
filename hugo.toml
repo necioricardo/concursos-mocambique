@@ -1,0 +1,18 @@
+baseURL = "https://concursos-mocambique.pages.dev/"
+languageCode = "pt-MZ"
+defaultContentLanguage = "pt"
+title = "Concursos Moçambique | Alertas PME"
+enableRobotsTXT = true
+disableKinds = ["RSS"]
+[taxonomies]
+  sector = "sectores"
+[permalinks]
+  concursos = "/concursos/:slug/"
+[params]
+  description = "Concursos públicos e oportunidades em Moçambique seleccionados para PME, sempre com link da fonte oficial."
+  whatsapp = "https://whatsapp.com/channel/0029Vb9oIwY9Bb5xVdAMGf1k"
+  formulario = "https://forms.gle/1MdLkVcPxHMs9iYTA"
+[markup.goldmark.renderer]
+  unsafe = false
+[sitemap]
+  changefreq = "daily"
